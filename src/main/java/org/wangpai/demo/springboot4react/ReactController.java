@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ReactController {
     @GetMapping("/index")
     public String index(Model model) {
-        return "index";
+        return "build/index";
     }
 }
