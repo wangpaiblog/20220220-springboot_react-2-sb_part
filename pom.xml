@@ -17,9 +17,15 @@
         <java.version>17</java.version>
     </properties>
     <dependencies>
+        <!-- 提供 Spring MVC 控制器功能等 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- 使用 URL 监控 SpringBoot -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
         <dependency>
