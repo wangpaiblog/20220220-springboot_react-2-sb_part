@@ -1,11 +1,15 @@
 package org.wangpai.demo.springboot4react;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class StaticPathConfig implements WebMvcConfigurer {
+    @Value("${custom.springboot.staticResources.localPath}")
+    private String localPath;
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         /**
@@ -21,6 +25,6 @@ public class StaticPathConfig implements WebMvcConfigurer {
          * 则对应的文件路径为 C:/Program Files/Nginx/nginx-1.21.6/html/index.html
          */
         registry.addResourceHandler("/local/**")
-                .addResourceLocations("file:C:/Program Files/Nginx/nginx-1.21.6/html/");
+                .addResourceLocations("file:" + localPath);
     }
 }
